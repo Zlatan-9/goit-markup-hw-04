@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Метаданные и подключение шрифтов/стилей -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebStudio</title>
+
+    <!-- Подключение normalize.css для сброса браузерных стилей -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
@@ -11,68 +14,88 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!-- Предзагрузка шрифтов Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Подключение нужных гарнитур -->
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Подключение основного файла со стилями -->
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body>
-    <!-- HEADER -->
 
+  <body>
+    <!-- ==================== HEADER ==================== -->
     <header class="header">
       <div class="container header-container">
         <nav class="header-nav">
-          <a href="./index.html" class="header-logo"
-            >Web<span class="header-logo-part">Studio</span></a
-          >
+          <!-- Логотип -->
+          <a href="./index.html" class="header-logo">
+            Web<span class="header-logo-part">Studio</span>
+          </a>
+
+          <!-- Навигация -->
           <ul class="header-nav-list">
             <li>
-              <a class="header-nav-link current" href="./index.html">Studio</a>
+              <a href="./index.html" class="header-nav-link current">
+                Studio
+              </a>
             </li>
-            <li><a href="" class="header-nav-link">Portfolio</a></li>
-            <li><a href="" class="header-nav-link">Contacts</a></li>
+            <li>
+              <a href="#" class="header-nav-link">Portfolio</a>
+            </li>
+            <li>
+              <a href="#" class="header-nav-link">Contacts</a>
+            </li>
           </ul>
         </nav>
+
+        <!-- Контакты -->
         <address class="address">
           <ul class="header-contact-list">
             <li>
-              <a href="mailto:info@devstudio.com" class="header-contact-link"
-                >info@devstudio.com</a
-              >
+              <a href="mailto:info@devstudio.com" class="header-contact-link">
+                info@devstudio.com
+              </a>
             </li>
             <li>
-              <a href="tel:+110001111111" class="header-contact-link"
-                >+11 (000) 111-11-11</a
-              >
+              <a href="tel:+110001111111" class="header-contact-link">
+                +11 (000) 111-11-11
+              </a>
             </li>
           </ul>
         </address>
       </div>
     </header>
 
-    <!-- Головний контент сторінкі main-->
-
+    <!-- ==================== MAIN CONTENT ==================== -->
     <main>
-      <!-- HERO -->
+      <!-- ===== HERO SECTION ===== -->
       <section class="hero">
         <div class="container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
+
+          <!-- Кнопка "Order Service" -->
           <button type="button" class="hero-btn">Order Service</button>
         </div>
       </section>
 
-      <!-- FEATURES -->
-
+      <!-- ===== FEATURES SECTION ===== -->
       <section class="features">
         <div class="container">
+          <!-- Скрытый заголовок для SEO/доступности -->
           <h2 class="visually-hidden">About us</h2>
+
           <ul class="features-list">
+            <!-- Блок "Strategy" -->
             <li class="features-list-item">
               <div class="features-list-image">
-                <svg class="features-item-icon" width="64" heigth="64">
+                <svg class="features-item-icon" width="64" height="64">
                   <use href="./images/icons.svg#icon-antenna"></use>
                 </svg>
               </div>
@@ -82,9 +105,11 @@
                 the perfect and creative solution.
               </p>
             </li>
+
+            <!-- Блок "Punctuality" -->
             <li class="features-list-item">
               <div class="features-list-image">
-                <svg class="features-item-icon" width="64" heigth="64">
+                <svg class="features-item-icon" width="64" height="64">
                   <use href="./images/icons.svg#icon-clock"></use>
                 </svg>
               </div>
@@ -94,9 +119,11 @@
                 within the shortest possible time.
               </p>
             </li>
+
+            <!-- Блок "Diligence" -->
             <li class="features-list-item">
               <div class="features-list-image">
-                <svg class="features-item-icon" width="64" heigth="64">
+                <svg class="features-item-icon" width="64" height="64">
                   <use href="./images/icons.svg#icon-diagram"></use>
                 </svg>
               </div>
@@ -106,9 +133,11 @@
                 opportunities and minimize risk.
               </p>
             </li>
+
+            <!-- Блок "Technologies" -->
             <li class="features-list-item">
               <div class="features-list-image">
-                <svg class="features-item-icon" width="64" heigth="64">
+                <svg class="features-item-icon" width="64" height="64">
                   <use href="./images/icons.svg#icon-astronaut"></use>
                 </svg>
               </div>
@@ -122,19 +151,20 @@
         </div>
       </section>
 
-      <!-- TEAM -->
-
+      <!-- ===== OUR TEAM SECTION ===== -->
       <section class="our-team-section">
         <div class="container">
           <h2 class="our-team">Our Team</h2>
+
           <ul class="team-list">
+            <!-- Участник 1 -->
             <li class="team-list-item">
               <img
                 class="team-image"
                 src="./images/img1.jpg"
                 width="264"
                 height="260"
-                alt="drop"
+                alt="Mark Guerrero"
               />
               <div class="team-name-container">
                 <h3 class="team-name">Mark Guerrero</h3>
@@ -187,13 +217,15 @@
                 </ul>
               </div>
             </li>
+
+            <!-- Участник 2 -->
             <li class="team-list-item">
               <img
                 class="team-image"
                 src="./images/img2.jpg"
                 width="264"
                 height="260"
-                alt="drop"
+                alt="Tom Ford"
               />
               <div class="team-name-container">
                 <h3 class="team-name">Tom Ford</h3>
@@ -246,13 +278,15 @@
                 </ul>
               </div>
             </li>
+
+            <!-- Участник 3 -->
             <li class="team-list-item">
               <img
                 class="team-image"
                 src="./images/img3.jpg"
                 width="264"
                 height="260"
-                alt="drop"
+                alt="Camila Garcia"
               />
               <div class="team-name-container">
                 <h3 class="team-name">Camila Garcia</h3>
@@ -305,13 +339,15 @@
                 </ul>
               </div>
             </li>
+
+            <!-- Участник 4 -->
             <li class="team-list-item">
               <img
                 class="team-image"
                 src="./images/img4.jpg"
                 width="264"
                 height="260"
-                alt="drop"
+                alt="Daniel Wilson"
               />
               <div class="team-name-container">
                 <h3 class="team-name">Daniel Wilson</h3>
@@ -368,12 +404,13 @@
         </div>
       </section>
 
-      <!-- PORTFOLIO -->
-
+      <!-- ===== PORTFOLIO SECTION ===== -->
       <section class="portfolio" id="portfolio">
         <div class="container">
           <h2 class="portfolio-title">Our Portfolio</h2>
+
           <ul class="portfolio-list">
+            <!-- Проект 1 -->
             <li class="portfolio-item">
               <div class="portfolio-item-cover">
                 <img
@@ -393,6 +430,8 @@
                 <p class="portfolio-tag">App</p>
               </div>
             </li>
+
+            <!-- Проект 2 -->
             <li class="portfolio-item">
               <div class="portfolio-item-cover">
                 <img
@@ -412,6 +451,8 @@
                 <p class="portfolio-tag">Marketing</p>
               </div>
             </li>
+
+            <!-- Проект 3 -->
             <li class="portfolio-item">
               <div class="portfolio-item-cover">
                 <img
@@ -431,6 +472,8 @@
                 <p class="portfolio-tag">App</p>
               </div>
             </li>
+
+            <!-- Проект 4 -->
             <li class="portfolio-item">
               <div class="portfolio-item-cover">
                 <img
@@ -450,6 +493,8 @@
                 <p class="portfolio-tag">Marketing</p>
               </div>
             </li>
+
+            <!-- Проект 5 -->
             <li class="portfolio-item">
               <div class="portfolio-item-cover">
                 <img
@@ -469,6 +514,8 @@
                 <p class="portfolio-tag">Design</p>
               </div>
             </li>
+
+            <!-- Проект 6 -->
             <li class="portfolio-item">
               <div class="portfolio-item-cover">
                 <img
@@ -493,19 +540,21 @@
       </section>
     </main>
 
-    <!-- FOOTER -->
-
+    <!-- ==================== FOOTER ==================== -->
     <footer class="footer-section">
       <div class="container">
         <div class="footer-left">
-          <a href="./index.html" class="footer-logo"
-            >Web<span class="footer-logo-part">Studio</span></a
-          >
+          <!-- Логотип в футере -->
+          <a href="./index.html" class="footer-logo">
+            Web<span class="footer-logo-part">Studio</span>
+          </a>
           <p class="footer-section-description">
             Increase the flow of customers and sales for your business with
             digital marketing &amp; growth solutions.
           </p>
         </div>
+
+        <!-- Социальные иконки -->
         <div class="footer-social">
           <p class="footer-social-title">Social media</p>
           <ul class="footer-social-list">

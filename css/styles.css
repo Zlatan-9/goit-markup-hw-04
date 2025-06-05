@@ -1,16 +1,23 @@
+/* ==============================================================
+   Основные настройки (Reset / Normalize)
+   ============================================================== */
+
+/* Базовый шрифт и цвет фона для всего тела страницы */
 body {
-  font-family: 'Roboto', sans-serif;
-  color: #434455;
-  background-color: #fff;
+  font-family: 'Roboto', sans-serif; /* Устанавливаем шрифт по умолчанию */
+  color: #434455; /* Цвет текста по умолчанию */
+  background-color: #fff; /* Белый фон страницы */
 }
 
-/* прибрали маркер списку */
-
+/* Удаляем маркеры у всех списков <ul> и убираем отступы */
 ul {
-  margin: 0;
-  padding-left: 0;
-  list-style: none;
+  margin: 0; /* Сбрасываем внешние отступы */
+  padding-left: 0; /* Сбрасываем внутренний отступ слева */
+  list-style: none; /* Убираем маркеры у списков */
 }
+
+/* Убираем внешние отступы у заголовков (h1–h6) и параграфов (p),
+   чтобы потом задавать их вручную там, где нужно */
 h1,
 h2,
 h3,
@@ -20,173 +27,203 @@ h6,
 p {
   margin: 0;
 }
-.header {
-  border-bottom: 1px solid #e7e9fc;
 
+/* ==============================================================
+   Секция: Header (шапка сайта)
+   ============================================================== */
+
+/* Сам контейнер header — добавляем нижнюю границу и лёгкую тень */
+.header {
+  border-bottom: 1px solid #e7e9fc; /* Тонкая линия снизу */
   box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
+  /* Небольшая тень для глубины */
 }
+
+/* Базовый класс контейнера (ширина + центрирование) */
 .container {
-  max-width: 1158px;
-  padding: 0 15px;
-  margin: 0 auto;
+  max-width: 1158px; /* Максимальная ширина контента */
+  padding: 0 15px; /* Горизонтальные внутренние отступы */
+  margin: 0 auto; /* Центрируем контейнер по горизонтали */
 }
-/* Header style  */
+
+/* Внутри header используем flex, чтобы расположить навигацию и контакты */
 .header-container {
-  display: flex;
-  align-items: center;
+  display: flex; /* Включаем флекс-контейнер */
+  align-items: center; /* Выравниваем элементы по вертикали */
 }
 
+/* Навигация: лого + пункты меню */
 .header-nav {
-  align-items: center;
-  margin-right: auto;
-  display: flex;
+  display: flex; /* Флекс для лого и списка ссылок */
+  align-items: center; /* Вертикальное выравнивание */
+  margin-right: auto; /* Отталкиваем блок контактов вправо */
 }
-.header-logo {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  margin-right: 76px;
 
-  /* line-height: 21px; */
-  line-height: 1.17;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #4d5ae5;
+/* Стилизуем логотип */
+.header-logo {
+  font-family: 'Raleway', sans-serif; /* Меняем шрифт на более «фирменный» */
+  font-weight: 700; /* Жирный шрифт */
+  font-size: 18px;
+  margin-right: 76px; /* Отступ справа от навигации */
+  line-height: 1.17; /* Межстрочный интервал */
+  letter-spacing: 0.03em; /* Небольшой межбуквенный интервал */
+  text-transform: uppercase; /* Все буквы заглавные */
+  color: #4d5ae5; /* Фиолетовый цвет текста */
 }
+
+/* Часть названия логотипа (Studio) другого цвета */
 .header-logo-part {
-  color: #2e2f42;
+  color: #2e2f42; /* Тёмно-синий/серый цвет */
 }
+
+/* Убираем стандартное подчёркивание у всех ссылок */
 a {
   text-decoration: none;
 }
-.header-nav-list {
-  display: flex;
-  gap: 40px;
-}
-.header-nav-link {
-  font-weight: 500;
-  font-size: 16px;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  display: block;
 
-  /* line-height: 24px; */
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #2e2f42;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+/* Список пунктов меню (располагаем горизонтально) */
+.header-nav-list {
+  display: flex; /* Горизонтальный флекс-контейнер */
+  gap: 40px; /* Промежуток между пунктами меню */
 }
+
+/* Каждый пункт меню — ссылка */
+.header-nav-link {
+  font-weight: 500; /* Средняя жирность */
+  font-size: 16px;
+  padding-top: 24px; /* Вертикальные «заполнители» выше и ниже текста */
+  padding-bottom: 24px;
+  display: block; /* Ссылка занимает всю высоту «заполнителя» */
+  line-height: 1.5; /* Межстрочный интервал */
+  letter-spacing: 0.02em; /* Межбуквенный интервал */
+  color: #2e2f42; /* Цвет текста (тёмно-синий/серый) */
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1); /* Плавное изменение цвета */
+}
+
+/* Активный пункт меню (тот, на котором мы сейчас находимся) */
 .header-nav-link.current {
-  position: relative;
-  color: #404bbf;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative; /* Чтобы псевдоэлемент ::after позиционировался относительно ссылки */
+  color: #404bbf; /* Другой оттенок фиолетового */
 }
+
+/* Добавляем «полоску» снизу у активного пункта меню */
 .header-nav-link.current::after {
   content: '';
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  position: absolute;
+  width: 100%; /* Совсем под текстом */
+  height: 4px; /* Толстая полоска */
+  border-radius: 2px; /* Слегка скруглённые углы */
+  position: absolute; /* Абсолютное позиционирование относительно ссылки */
   left: 0;
-  bottom: -1px;
-  border-radius: 2px;
-  background-color: #404bbf;
+  bottom: -1px; /* На 1px ниже текста, чтобы не слипалось */
+  background-color: #404bbf; /* Цвет той же «активной» ссылки */
 }
+
+/* При наведении и фокусе меняем цвет ссылки (меняем на фиолетовый) */
 .header-nav-link:hover,
 .header-nav-link:focus {
   color: #404bbf;
 }
+
+/* Список контактов (email и телефон) */
 .header-contact-list {
-  display: flex;
-  gap: 40px;
+  display: flex; /* Располагаем контакты горизонтально */
+  gap: 40px; /* Промежуток между контактами */
 }
 
+/* Стили для ссылок контактов (email и телефон) */
 .header-contact-link {
   font-weight: 400;
   font-size: 16px;
-
-  /* line-height: 24px; */
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: #434455;
+  color: #434455; /* Тот же цвет, что в body */
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* При наведении на контакт — меняем цвет */
 .header-contact-link:hover,
-.header-contact-link:focus {
+.header-contact-link:focus,
+.header-nav-link.current:hover,
+.header-nav-link.current:focus {
   color: #404bbf;
 }
+
+/* Убираем курсив у тега <address>, чтобы он выглядел как обычный текст */
 .address {
   font-style: normal;
 }
+
+/* ==============================================================
+   Секция: Hero (баннер)
+   ============================================================== */
+
+/* Блок hero (фон + отступы) */
 .hero {
-  max-width: 1440px;
-  background: #2e2f42;
+  max-width: 1440px; /* Ограничиваем ширину фона */
+  background: #2e2f42; /* Тёмный фон на случай, если изображение не загрузилось */
+  /* Наложили полупрозрачный чёрно-синий слой поверх картинки */
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url('../images/people-office.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  padding: 188px 0;
-  margin: 0 auto;
+    url('../images/people-office.jpg'); /* Само изображение фона */
+  background-repeat: no-repeat; /* Не повторять фон */
+  background-size: cover; /* Покрыть всю площадь */
+  background-position: center; /* Центрировать изображение */
+  padding: 188px 0; /* Отступы сверху и снизу */
+  margin: 0 auto; /* Центрируем, если экран уже */
 }
+
+/* Заголовок внутри баннера */
 .hero-title {
-  max-width: 496px;
-  margin: 0 auto 48px;
-  font-weight: 700;
-  font-size: 56px;
-
-  /* line-height: 60px; */
-  line-height: 1.07;
+  max-width: 496px; /* Ограничиваем ширину, чтобы текст не «расплывался» */
+  margin: 0 auto 48px; /* Центрируем и добавляем отступ снизу */
+  font-weight: 700; /* Жирный шрифт */
+  font-size: 56px; /* Очень крупный размер */
+  line-height: 1.07; /* Межстрочный интервал */
   letter-spacing: 0.02em;
-  text-align: center;
-  color: #fff;
+  text-align: center; /* Выравнивание по центру */
+  color: #fff; /* Белый цвет текста */
 }
-/* кнопка правильно написана */
-.hero-btn {
-  /* 1) Семейство шрифтов */
-  font-family: 'Roboto', sans-serif;
 
-  /* 2) Жирность и размер */
+/* Стили для кнопки внутри баннера */
+.hero-btn {
+  font-family: 'Roboto', sans-serif; /* Наследуем основной шрифт */
   font-weight: 500;
   font-size: 16px;
-
-  /* 3) Межстрочный интервал и межбуквенный кернинг */
   line-height: 1.5;
   letter-spacing: 0.04em;
-
-  /* 4) Цвет текста */
-  color: #fff;
-
-  /* 5) Фоновый цвет кнопки (базовый) */
-  background-color: #4d5ae5;
-
-  /* 6) Курсор «рука» при наведении */
-  cursor: pointer;
-
-  /* сделать так, чтобы кнопка не ездила */
-  display: block;
-  min-width: 169px;
-  border-radius: 4px;
-  padding: 16px 32px;
-  border: 0;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-  margin: 0 auto;
+  color: #fff; /* Белый текст кнопки */
+  background-color: #4d5ae5; /* Фиолетовый фон */
+  cursor: pointer; /* Курсор «рука» при наведении */
+  display: block; /* Блочный элемент */
+  min-width: 169px; /* Минимальная ширина */
+  border-radius: 4px; /* Слегка скруглённые углы */
+  padding: 16px 32px; /* Отступы внутри кнопки */
+  border: 0; /* Убираем рамку у кнопки */
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15); /* Лёгкая тень */
+  margin: 0 auto; /* Центрируем кнопку по горизонтали */
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 7) При hover и focus фон становится #404BFF */
+/* При наведении / фокусе меняем цвет фона кнопки */
 .hero-btn:hover,
 .hero-btn:focus {
   background-color: #404bbf;
 }
+
+/* ==============================================================
+   Секция: Features (особенности / преимущества)
+   ============================================================== */
+
+/* Отступы сверху и снизу у секции «features» */
 .features {
   padding: 120px 0;
 }
-/* для браузеоа, чтобы он находил, но не было видно */
 
+/* Скрытый заголовок для тех, кто пользуется скринридерами;
+   при этом он не мешает визуально, но улучшает SEO */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -200,315 +237,376 @@ a {
   overflow: hidden;
 }
 
+/* Список с «карточками» features (располагаем по горизонтали) */
 .features-list {
-  display: flex;
-  gap: 24px;
-}
-/* разобраться с калькулятором */
-.features-list-item {
-  max-width: 264px;
-  width: calc((100% - 72px) / 4);
-  border: 1px solid var(--light-slate);
-}
-.features-list-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #8e8f99;
-  border-radius: 4px;
-  width: 264px;
-  height: 112px;
-  background-color: #f4f4fd;
-  margin-bottom: 8px;
+  display: flex; /* Горизонтальный флекс-контейнер */
+  gap: 24px; /* Промежутки между элементами */
 }
 
+/* Каждый элемент списка — «карточка» с рамкой */
+.features-list-item {
+  max-width: 264px; /* Фиксируем максимальную ширину */
+  width: calc((100% - 72px) / 4); /* Или равная доля экрана (- итоги gap) */
+  border: 1px solid var(--light-slate); /* Рамка: используем CSS-переменную */
+}
+
+/* Внутренний блок с иконкой (размеры + фон) */
+.features-list-image {
+  display: flex; /* Центрируем иконку внутри */
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #8e8f99; /* Рамка вокруг иконки */
+  border-radius: 4px; /* Слегка скруглённые углы */
+  width: 264px; /* Фиксированная ширина */
+  height: 112px; /* Фиксированная высота */
+  background-color: #f4f4fd; /* Светлый лилово-серый фон */
+  margin-bottom: 8px; /* Отступ под иконкой до текста */
+}
+
+/* Название внутри карточки (заголовок h3) */
 .title {
   font-weight: 500;
   font-size: 20px;
-  text-transform: capitalize;
-  margin-bottom: 8px;
-
-  /* line-height: 24px; */
+  text-transform: capitalize; /* Первая буква заглавная */
+  margin-bottom: 8px; /* Промежуток до абзаца */
   line-height: 1.2;
   letter-spacing: 0.02em;
-  color: #2e2f42;
+  color: #2e2f42; /* Тот же тёмно-синий/серый цвет */
 }
+
+/* Текст внутри карточки (параграф) */
 .text {
   font-weight: 400;
   font-size: 16px;
-
-  /* line-height: 24px; */
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
 }
 
+/* ==============================================================
+   Секция: Our Team (наша команда)
+   ============================================================== */
+
+/* Фон и отступы у секции */
 .our-team-section {
-  background: #f4f4fd;
+  background: #f4f4fd; /* Светлый фон */
   padding: 120px 0;
 }
+
+/* Заголовок «Our Team», большой и жирный */
 .our-team {
-  text-transform: capitalize;
+  text-transform: capitalize; /* Первая буква заглавная */
   font-weight: 700;
   font-size: 36px;
-  margin-bottom: 72px;
-
-  /* line-height: 40px; */
+  margin-bottom: 72px; /* Больше места под заголовком */
   line-height: 1.11;
   letter-spacing: 0.02em;
-  text-align: center;
+  text-align: center; /* Выравниваем по центру */
   color: #2e2f42;
 }
+
+/* Список участников (располагаем горизонтально, но разрешаем перенос) */
 .team-list {
   display: flex;
   align-items: center;
   gap: 24px;
-  flex-wrap: wrap;
-}
-.team-image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.team-list-item {
-  background-color: #fff;
-  width: calc((100% - 72px) / 4);
-  border-radius: 0 0 4px 4px;
-  text-align: center;
+  flex-wrap: wrap; /* Разрешаем переносить карточки на новую строку */
 }
 
+/* Картинка участника (ширина 100% внутри родителя) */
+.team-image {
+  display: block; /* Убираем лишние отступы снизу */
+  width: 100%;
+  height: auto; /* Пропорционально высота подстраивается */
+}
+
+/* Карточка одного участника */
+.team-list-item {
+  background-color: #fff; /* Белый фон */
+  width: calc(
+    (100% - 72px) / 4
+  ); /* Позиционирование по 4 карточки в ряд (с учётом gap) */
+  border-radius: 0 0 4px 4px; /* Слегка скруглённые углы только внизу */
+  text-align: center; /* Выравниваем содержимое по центру */
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08); /* Лёгкая тень, чтобы карточка «приподнятая» */
+}
+
+/* Имя участника (заголовок h3 внутри карточки) */
 .team-name {
   font-weight: 500;
   font-size: 20px;
-  margin-bottom: 8px;
-
-  /* line-height: 24px; */
+  margin-bottom: 8px; /* Отступ до роли */
   line-height: 1.2;
   letter-spacing: 0.02em;
-  text-align: center;
   color: #2e2f42;
 }
 
+/* Внутренняя обёртка с отступами */
 .team-name-container {
-  padding: 32px 0;
+  padding: 32px 0; /* Вертикальные отступы внутри карточки */
 }
 
+/* Роль участника (параграф) */
 .team-role {
   font-weight: 400;
   font-size: 16px;
-
-  /* line-height: 24px; */
   line-height: 1.5;
   letter-spacing: 0.02em;
-  text-align: center;
   color: #434455;
-  margin-bottom: 8px;
+  margin-bottom: 8px; /* Отступ до социальных иконок */
 }
 
+/* Список социальных иконок (Instagram, Twitter и т.п.) */
 .team-item-social {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 24px; /* Расстояние между иконками */
 }
+
+/* Размер «кнопки» для каждой иконки */
 .team-item-social-item {
   width: 40px;
   height: 40px;
 }
+
+/* Ссылка-иконка (круглая кнопка) */
 .team-item-social-link {
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color, #4d5ae5);
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color, #4d5ae5); /* Цвет фона (фиолетовый) */
+  border-radius: 50%; /* Делаем круг */
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.team-item-social-icon {
-  width: 16px;
-  height: 16px;
-  fill: var(--icon-color, #f4f4fd);
+
+/* При наведении на иконку меняем цвет круга */
+.team-item-social-link:hover,
+.team-item-social-link:focus {
+  background-color: #404bbf;
 }
-/* Примеры правильно заданных имён классов: feature-item, item-01, features_li, liitem */
+
+/* Сам SVG-иконка внутри ссылки */
+.team-item-social-icon {
+  width: 16px; /* Размер иконки */
+  height: 16px;
+  fill: var(--icon-color, #f4f4fd); /* Цвет (светлый), через CSS-переменную */
+}
+
+/* ==============================================================
+   Секция: Portfolio (портфолио)
+   ============================================================== */
+
+/* Отступы сверху и снизу у секции «portfolio» */
 .portfolio {
   padding: 120px 0;
 }
 
+/* Заголовок «Our Portfolio» */
 .portfolio-title {
-  margin-bottom: 72px;
+  margin-bottom: 72px; /* Большой отступ под заголовком */
   text-transform: capitalize;
   font-weight: 700;
   font-size: 36px;
-
-  /* line-height: 40px; */
   line-height: 1.11;
   letter-spacing: 0.02em;
   text-align: center;
   color: #2e2f42;
 }
 
+/* Список проектов (карточек) */
 .portfolio-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 48px 24px;
-  justify-content: center;
+  display: flex; /* Горизонтальный флекс-контейнер */
+  flex-wrap: wrap; /* Разрешаем перенос карточек на новую строку */
+  gap: 48px 24px; /* Вертикальные и горизонтальные промежутки */
+  justify-content: center; /* Центрируем по горизонтали */
 }
 
+/* Одна карточка проекта */
 .portfolio-item {
-  width: calc((100% - 48px) / 3);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
+  width: calc((100% - 48px) / 3); /* Три карточки в ряд (с учётом gap) */
+  position: relative; /* Для абсолютного позиционирования описания */
+  overflow: hidden; /* Скрываем части, выходящие за пределы */
+  cursor: pointer; /* Курсор «рука» наводя на проект */
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* При наведении добавляем лёгкую тень карточке */
 .portfolio-item:hover {
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
-.portfolio-item:hover .portfolio-item-cover-text {
-  transform: translateY(0);
-}
+
+/* Блок-обёртка для самой картинки проекта */
 .portfolio-item-cover {
-  position: relative;
-  overflow: hidden;
+  position: relative; /* Чтобы потом «текст-наклейка» сползал снизу */
+  overflow: hidden; /* Скрываем выходящий за пределы контейнера контент */
 }
+
+/* Текст, который появляется при наведении (спускается снизу) */
 .portfolio-item-cover-text {
   position: absolute;
-  bottom: 0;
+  bottom: 0; /* Начинаем с низа */
   width: 100%;
   height: 100%;
-  padding: 40px 32px;
-  background-color: #4d5ae5;
-  color: #f4f4fd;
+  padding: 40px 32px; /* Отступы внутри «наклейки» */
+  background-color: #4d5ae5; /* Полупрозрачный фиолетовый фон */
+  color: #f4f4fd; /* Светлый текст */
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.02em;
-  transform: translateY(100%);
+  transform: translateY(100%); /* Сначала полностью скрыт вниз */
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.portfolio-text-box {
-  padding: 32px 16px;
-  border: 1px solid #e7e9fc;
-  border-top: none;
+
+/* При наведении на карточку «наклейка» поднимается наверх (translateY → 0) */
+.portfolio-item:hover .portfolio-item-cover-text {
+  transform: translateY(0);
 }
+
+/* Обёртка с текстовыми данными проекта (название + тег) */
+.portfolio-text-box {
+  border: 1px solid #e7e9fc; /* Рамка вокруг текста */
+  padding: 32px 16px; /* Внутренние отступы */
+  border-top: none; /* Убираем верхнюю грань, чтобы не было двойной линии */
+}
+
+/* Название проекта (h3) */
 .portfolio-name {
-  margin-bottom: 8px;
+  margin-bottom: 8px; /* Отступ до тега (тип проекта) */
   font-weight: 500;
   font-size: 20px;
-
-  /* line-height: 24px; */
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: #2e2f42;
 }
+
+/* Само изображение проекта */
 .portfolio-img {
-  display: block;
+  display: block; /* Убираем ненужные пробелы (пробельные символы) */
 }
-.portfolio-text-box {
-  border: 1px solid #e7e9fc;
-  padding: 32px 16px;
-  border-top: 0;
-}
+
+/* Тег (тип проекта: App, Marketing, Design) */
 .portfolio-tag {
   font-weight: 400;
   font-size: 16px;
-
-  /* line-height: 24px; */
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
 }
 
+/* ==============================================================
+   Секция: Footer (подвал сайта)
+   ============================================================== */
+
+/* Стили для логотипа в футере */
 .footer-logo {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 18px;
-
-  /* line-height: 21px; */
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
-  display: inline-block;
-  margin-bottom: 16px;
+  display: inline-block; /* Чтобы не занимал целую строку */
+  margin-bottom: 16px; /* Отступ до описания */
 }
+
+/* Вторая часть логотипа в футере (Studio) */
 .footer-logo-part {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 18px;
-
-  /* line-height: 21px; */
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: #f4f4fd;
+  color: #f4f4fd; /* Светлый цвет (на фоне тёмного футера) */
 }
+
+/* Отступ у блока слева в футере */
 .footer-left {
-  margin-right: 120px;
+  margin-right: 120px; /* Расстояние до социальных иконок */
 }
 
+/* Фон и отступы у всего футера */
 .footer-section {
-  background: #2e2f42;
-  padding: 100px 0;
+  background: #2e2f42; /* Тёмный фон */
+  padding: 100px 0; /* Отступы сверху и снизу */
 }
 
+/* Описание под логотипом в футере */
 .footer-section-description {
   font-size: 16px;
-
-  /* line-height: 24px; */
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: #f4f4fd;
-  max-width: 264px;
+  color: #f4f4fd; /* Светлый цвет текста */
+  max-width: 264px; /* Ограничиваем ширину абзаца */
 }
+
+/* Блок социальных иконок */
 .footer-social {
   display: flex;
+  flex-direction: column; /* Сначала текст «Social media», потом иконки */
   justify-content: center;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start; /* Выравниваем влево */
 }
+
+/* Заголовок «Social media» */
 .footer-social-title {
   font-weight: 500;
   font-size: 16px;
-
-  /* line-height: 24px; */
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: var(--color, #ffffff);
-  margin-bottom: 16px;
+  color: var(--color, #ffffff); /* Белый цвет */
+  margin-bottom: 16px; /* Отступ до списка иконок */
 }
+
+/* Список самих социальных иконок (горизонтально) */
 .footer-social-list {
   display: flex;
-  gap: 16px;
-  list-style: none;
+  gap: 16px; /* Промежуток между иконками */
+  list-style: none; /* Убираем маркер списка */
   justify-content: center;
 }
+
+/* Размер блока под каждую иконку */
 .footer-social-item {
   width: 40px;
   height: 40px;
 }
+
+/* Ссылка-иконка (круглая кнопка) */
 .footer-social-link {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: var(--color, #4d5ae5);
-  border-radius: 50%;
+  background-color: var(--color, #4d5ae5); /* Фиолетовый фон */
+  border-radius: 50%; /* Круг */
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* При наведении на иконку меняем цвет фона */
 .footer-social-link:hover,
 .footer-social-link:focus {
-  background-color: #31d0aa;
+  background-color: #31d0aa; /* Бирюзовый оттенок */
 }
+
+/* Размер самой SVG-иконки */
 .footer-social-icon {
   width: 24px;
   height: 24px;
-  fill: var(--icon-color, #f4f4fd);
+  fill: var(--icon-color, #f4f4fd); /* Светлый цвет внутри */
 }
+
+/* Выравниваем контейнер футера по базовой линии 
+   (когда есть логотип/текст слева и иконки справа) */
 .footer-section .container {
   display: flex;
-  align-items: baseline;
+  align-items: baseline; /* Выравниваем по «основанию» текста */
 }
